@@ -196,81 +196,137 @@ svg text.blink {animation: blink 1s ease-out;}
 /********************************/
 /***** CUSTOM CS FOR TABS *****
 /********************************/
-    @-webkit-keyframes 
-  showTab{
-    from  {opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}
-    to    {opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.flex-wrap {
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
   }
+  
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
 
-    @keyframes showTab{from{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}
-    
-    /** STYLING BEGINS HERE **/
-    
-    .tabsy>.tabButton {
-      display: block;
-      min-width: 20%;
-      background-color: #F50057;
-      color: white; 
-      text-align:center;
-      font-size: 18px;
-      -webkit-transition:all 250ms ease-in-out;
-      transition:all 250ms ease-in-out
-    }
 
-    .tabsy>input {display:none}
-    .tabsy>input:checked+label+.tab{display:block}
+.tabs-wide {
+  width: 100%;
+}
 
-    .tabsy>input:checked+label+.tab>.content {
-      -webkit-animation:showTab 250ms ease-in-out;
-      animation:showTab 250ms ease-in-out
-    }
-    .tabsy>.tab {display:none}
-    
-    .tab {display: flex; flex-direction: row; flex-wrap: wrap; background-color: lightgray; width: 100%;}
-    .tabs-cell {padding: 30px; border-radius: 16px; margin: 15px;}
-    .tabs-cell h3 {margin: 5px; padding: 15px; min-width: 200px;}
-    .content {display: flex; flex-direction: row; flex-wrap: wrap; padding: 15px;}
-    #tab1, #tab2, #tab3 {margin: 0px !important;}
-    
-    /* show contents only for selected tab */
-    #tab1:checked ~ .tab.content1
-    #tab2:checked ~ .tab.content2
-    #tab3:checked ~ .tab.content3
-    
-    
-  @media screen and (min-width: 768px) {
-    .tabsy {
-      display:-webkit-box;
-      display:-webkit-flex;
-      display:-ms-flexbox;
-      display:flex;
-      -webkit-flex-wrap:wrap;
-      -ms-flex-wrap:wrap;flex-wrap:wrap
-    }
-    
-    .tabsy
+.tabs-cell {
+  h3 {
+    color: #F50057;
+    font-size: 20px;
+  }
+  h4 {
+    color: purple;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+}
 
-      >.tabButton{
-        -webkit-box-ordinal-group:2;
-        -webkit-order:1;
-        -ms-flex-order:1;order:1;
-        -webkit-box-align:start;
-        -webkit-align-items:flex-start;
-        -ms-flex-align:start;
-        align-items:flex-start;
-        cursor:pointer
+
+// ACCORDION
+
+
+.accordion{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  .a-container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-bottom: 5px;
+      .a-btn{
+          margin: 0;
+          position: relative;
+          padding: 15px 30px;
+          width: 100%;
+          color: white;
+          display: block;
+          font-size: 20px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          border-radius: 3px;
+          span{
+              display: block;
+              position: absolute;
+              height: 14px;
+              width: 14px;
+              right: 20px;
+              top: 18px;
+              &:after{
+                  content: '';
+                  width: 14px;
+                  height: 3px;
+                  border-radius: 2px;
+                  background-color: #fff;
+                  position: absolute;
+                  top: 6px;
+              }
+              &:before{
+                  content: '';
+                  width: 14px;
+                  height: 3px;
+                  border-radius: 2px;
+                  background-color: #fff;
+                  position: absolute;
+                  top: 6px;
+                  transform: rotate(90deg);
+                  transition: all 0.3s ease-in-out;
+              }
+          }
+          
       }
-      
-      .tabsy
+      .a-panel{
+          width: 100%;       
+          color: #262626;
+          transition: all 0.2s ease-in-out;
+          opacity: 0;
+          height: auto;
+          max-height: 0;
+          overflow: hidden;
+          padding: 0px 10px;
 
-        >input:checked+label{
-          color:#5a5243
-        }.tabsy
+          ul {
+            list-style: none;
+            li {
+              text-align: left;
+              padding-left: 5px;
+            }
+          }
+      }
 
-        >.tab{
-          -webkit-box-ordinal-group:3;
-          -webkit-order:2;
-          -ms-flex-order:2;
-          order:2
-        }
+
+      &.active{
+          .a-btn{
+              color: #fff;
+              span{
+                  &::before{
+                      transform: rotate(0deg);
+                  }
+              }
+          }
+          .a-panel{               
+              //padding: 15px 10px 10px 10px;
+              opacity: 1;
+              max-height: 1500px;    
+              border: 2px solid #F50057;          
+          }
+      }
   }
+}

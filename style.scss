@@ -1,0 +1,109 @@
+.gallery.images .fotomoto-buy {
+  display: none ;
+}
+
+.buttoninfo {
+  background-color: #cc3333; 
+}
+  
+.menu-lang > a > img {
+  height: 13px;
+  margin: 0 10px 0 0;
+}
+
+.white-btn {
+  margin: 10px 25px;
+  border: 1px solid white !important;
+  color: white;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0) !important;
+  transition: 0.1s;
+}
+
+.white-btn:hover {
+  margin: 10px 25px 10px 25px;
+  border: 2px solid white;
+  color: black;
+  border-radius: 355px 15px 325px 15px/15px 25px 15px 355px;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 1) !important;
+  transition: 0.1s;
+}
+
+
+
+.mobileShow {
+    display: none;
+  }
+  /* Smartphone Portrait and Landscape */
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .mobileShow {
+      display: inline;
+    }
+  }
+  
+
+.mobileHide {
+    display: inline;
+  }
+  /* Smartphone Portrait and Landscape */
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .mobileHide {
+      display: none;
+    }
+  }
+  
+  :root {
+  animate-delay: 0.5s;
+}
+
+.bg-orange-100 {background-color: darkorange;}
+.bg-green-100 {background-color: green;}
+.bg-purple-100 {background-color: purple;}
+.bg-grey-100 {background-color: grey;}
+.bg-red-100 {background-color: red;}
+.bg-pink-100 {background-color: #F50057;}
+.bg-cyan-100 {background-color: deepskyblue;}
+
+
+.bg-orange {background-color: rgba(255, 140, 0, 0.509);}
+.bg-green {background-color: rgba(0, 128, 0, 0.509);}
+.bg-purple {background-color: rgba(128, 0, 128, 0.509);}
+.bg-grey {background-color: rgba(128, 128, 128, 0.475);}
+.bg-red {background-color: rgba(255, 0, 0, 0.509);}
+.bg-pink {background-color: rgba(255, 20, 145, 0.509);}
+.bg-webdesign {background-color:#F50057;}
+.bg-cyan {background-color: rgba(0, 191, 255, 0.502);}
+
+
+
+.border-orange {border: 2px solid orange;}
+.border-green {border: 2px solid green;}
+.border-purple {border: 2px solid purple;}
+.border-grey {background-color: grey;}
+.border-red {border: 2px solid red;}
+.border-pink {border: 2px solid deeppink;}
+.borger-cyan {border: 2px solid deepskyblue;}
+.border-black {border: 2px solid black;}
+
+.badge {display: inline-block; padding: 5px 15px; margin: 5px 5px;}
+.pill {border-radius: 16px;}
+.text-white {color: white !important; }
+.text-black {color: black;}
+
+.page-btn {
+  display: inline-block; 
+  padding: 10px 20px; 
+  margin: 5px 5px;
+  border-radius: 5px;
+}
+
+
+ol li {
+  margin: 10px 5px;
+}
+  
+
