@@ -1,7 +1,3 @@
-const retouchBlock = gsap.utils.toArray('.retouch-block');
-const folderItems = document.querySelectorAll('.folders li');
-const folderBlock = document.querySelector('.folders');
-console.log(folderBlock);
 
 
 // ANIMATION FOR RETOUCH SLIDER
@@ -25,9 +21,12 @@ retouchBlock.forEach(block => {
 
 // ANIMATION FOR FOLDERS GRID
 
+const folderItems = document.querySelectorAll('.folders li');
+const folderBlock = document.querySelector('.folders');
+
 folderItems.forEach(block => {
-  const animFolders = gsap.timeline({ defaults: {ease: 'none'} }); 
-  animFolders.from("li", {x:"+100%", opacity: 0, duration: 0.5});
+  const animFolders = new timeline
+  animFolders.from(block, {x:"+100%", opacity: 0, duration: 0.5});
   
   ScrollTrigger.create({
     trigger: block,
